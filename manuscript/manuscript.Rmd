@@ -23,6 +23,45 @@ This means that the 5 seed, the wild card team with the most wins, sometimes has
 
 In this manuscript, we explore different methods of seeding and different tournament structures to make the playoffs more "fair" while still trying to avoid geographical "concentrations" of playoff teams.  
 
+## Qualifying rules.  
+Matthews System: It's real life but division winners have to be over .500. If division winner is not over .500, there is another wild card team.  
+
+## Seeding structures
+- Ignore everything top 14 teams period (1-14 ignoring all structure) 
+- 1-7 within each conference ignoring divisons. 
+- Stuart system: In each conference the 1-2 are the "sub-conference" champions. and then 3-7 are wild cards.  
+- Stuart system where seeding is based only on wins.  
+- Just 8 divisiosn no conferences.  8 division winners and 6 wild cards ignoring conferences.  (Division winners 1-8, and then wild card teams are the rest)
+- All division winners and 3 wild cards teams seeded by record.  
+- Real playoff scenario
+
+- Subdivisoons and top 7 sub division winners qualify and seeding is based on record.  
+
+
+## Playoff structures
+- single elimination fixed straight bracket  
+- single elimination with re-seeding after every round. 
+- regular seeding but HFA is determined by record.  Same record goes to better seed.  
+- Higher seed gets to "choose".  
+    - They always choose the worse team
+    - There is some probability of choosing a team based on proportion to the thetas.  
+- Aussie Rules football structure
+- PBA ladder structure.  
+- Japanese Basebakll, Korean Baseball. 
+- Double elimination tournament structure.  
+  - True double elimination 
+  - Modified double elimination.  
+- Some kind of round robin. 
+- Little league world series "double elimination". 
+- Repechage like in Olympic wrestling.  
+
+
+https://www.tandfonline.com/doi/abs/10.1057/palgrave.jors.2600330
+https://journals.sagepub.com/doi/pdf/10.1177/1527002510363103
+https://journals.humankinetics.com/view/journals/ijsnem/29/4/article-p441.xml
+https://www.tandfonline.com/doi/abs/10.1080/13606710110117023
+
+
 
 
 
