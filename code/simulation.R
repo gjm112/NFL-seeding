@@ -56,7 +56,38 @@ for (j in 1:nrow(schedule)){
 }
 
 #Regular season results.  
-table(factor(results, levels = 1:32))
+dat$wins <- table(factor(results, levels = 1:32))
+
+#Top 14 make playoffs 
+library(tidyverse)
+dat <- dat %>% arrange(-wins)
+dat$seed <- 1:32
+playoffs <- dat %>% filter(seed <=14)
+
+playoff_results <- list()
+
+bracket <- data.frame(H = c(1,8,4,5,6,3,7,2))
+bracket$A <- 17  - bracket$H
+
+#Takes in 2 seeds returns a simulated winner
+#alpha is home field advantage
+alpha <- 0
+simplayoff <- function(x){
+  if (x[2] > 14){return(x[1])}
+  xb <- playoffs$beta[playoffs$seed == x[1]] - playoffs$beta[playoffs$seed == x[2]] + alpha
+  p <- exp(xb) / (1+ exp(xb))
+  return(sample(x, 1, prob = c(p,1-p)))
+}
+
+#Simulated playoffs
+round1 <- apply(as.matrix(bracket),1,simplayoff)
+greg <- matrix(round1,ncol = 2, byrow = TRUE)
+round2 <- apply(greg,1,simplayoff)
+steve <- matrix(round2,ncol = 2, byrow = TRUE)
+round3 <- apply(steve,1,simplayoff)
+champion <- simplayoff(round3)
+
+
 
 
 
