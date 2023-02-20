@@ -8,12 +8,13 @@ conference <- rep(1:2, each = 16)
 dat <- data.frame(ids, betas, division, conference)
 
 library(combinat)
+library(tidyverse) # We always need the tidyverse!
 #Division games
 div <- list()
 for (i in 1:8){
   out <- t(combn((4*(i - 1)+1):(4*i), 2))
-  rbind(out, cbind(out[,2],out[,1]))
-div[[i]] <- out
+  out <- rbind(out, cbind(out[,2],out[,1]))
+  div[[i]] <- out
 }
 one <- do.call(rbind,div)
 
@@ -27,6 +28,10 @@ cdic[[4]] <- expand.grid(25:28,29:32)
 
 two <- as.matrix(do.call(rbind,cdic))
 
+# Reverse some matchups so that each teams has two home and two road games
+two[(c(1:nrow(two)) %% 16) %in% c(3,4,7,8,9,10,13,14),] <- 
+  apply(two[(c(1:nrow(two)) %% 16) %in% c(3,4,7,8,9,10,13,14),],1,rev) %>% t
+
 #Cross Conference 
 #1 vs 5, 2 vs 6, 3, vs 7, 4 vs 8
 cc <- list()
@@ -37,6 +42,10 @@ cc[[3]] <- expand.grid(9:12,25:28)
 cc[[4]] <- expand.grid(13:16,29:32)
 
 three <- as.matrix(do.call(rbind,cc))
+# Reverse some matchups so that each teams has two home and two road games
+three[(c(1:nrow(three)) %% 16) %in% c(3,4,7,8,9,10,13,14),] <- 
+  apply(three[(c(1:nrow(three)) %% 16) %in% c(3,4,7,8,9,10,13,14),],1,rev) %>% t
+
 
 #Rank based games
 four
